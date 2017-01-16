@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/STOMPUser.iml" filepath="$PROJECT_DIR$/.idea/modules/STOMPUser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/STOMPUser_main.iml" filepath="$PROJECT_DIR$/.idea/modules/STOMPUser_main.iml" group="STOMPUser" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/STOMPUser_test.iml" filepath="$PROJECT_DIR$/.idea/modules/STOMPUser_test.iml" group="STOMPUser" />
+    </modules>
+  </component>
+</project>
