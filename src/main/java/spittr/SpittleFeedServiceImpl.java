@@ -1,17 +1,17 @@
 package spittr;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class SpittleFeedServiceImpl implements SpittleFeedService {
 
 	private SimpMessagingTemplate messaging;
-	private Pattern pattern = Pattern.compile("\\@(\\S+)");
+	private Pattern pattern = Pattern.compile("\\@(\\S+)");  /*实现用户提及功能的正则表达式*/
 	
 	@Autowired
 	public SpittleFeedServiceImpl(SimpMessagingTemplate messaging) {
@@ -24,7 +24,7 @@ public class SpittleFeedServiceImpl implements SpittleFeedService {
 		Matcher matcher = pattern.matcher(spittle.getMessage());
 		if (matcher.find()) {
 			String username = matcher.group(1);
-			messaging.convertAndSendToUser(username, "/queue/notifications",
+			messaging.convertAndSendToUser(username, "/queue/notifications",/*发送提醒给用户*/
 					new Notification("You just got mentioned!"));
 		}
 	}
